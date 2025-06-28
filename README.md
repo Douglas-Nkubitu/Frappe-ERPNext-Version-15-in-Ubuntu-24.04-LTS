@@ -180,13 +180,14 @@ If you are using multiple instance in the same server
     
     bench get-app erpnext --branch version-15
 
+    bench --site {site-name} install-app erpnext
+
    In case you have custome app
 
     bench get-app {custom-app (Clone using the web URL.)}
 
-    bench --site {site-name} install-app erpnext
+    bench --site {site-name} install-app {custom-app}
     
-    bench start
 ### Setting ERPNext for Production
 
 ### STEP 16 Enable Scheduler
