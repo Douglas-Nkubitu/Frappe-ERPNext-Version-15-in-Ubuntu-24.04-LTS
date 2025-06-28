@@ -173,8 +173,10 @@ Now press (Ctrl-X) to exit
 
     
     bench get-app erpnext --branch version-15
-    ###OR
-    bench get-app https://github.com/frappe/erpnext --branch version-15
+
+   Inncase you have custome app
+
+    bench get-app {custom-app (Clone using the web URL.)}
 
     bench --site {site-name} install-app erpnext
     
