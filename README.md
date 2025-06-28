@@ -166,6 +166,8 @@ Now press (Ctrl-X) to exit
     
     bench --site {site-name} add-to-hosts
 
+    bench use {site-name}
+
 
 ### STEP 15 install ERPNext latest version in bench & site
 
