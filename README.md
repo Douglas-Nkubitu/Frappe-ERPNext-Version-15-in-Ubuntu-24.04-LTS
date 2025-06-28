@@ -223,6 +223,8 @@ Now press (Ctrl-X) to exit
       (The system will pause at some point and ask you to select the site name you wish to install the certificate from a list of names it found. Be sure to select the URL you used and not ‘site1.local’ at this point)
       
 
+### Restoring Backup
+      sudo bench --force --site {site_name} restore {database_path} --with-public-files {path} --with-private-files {patch}
 
       
 
