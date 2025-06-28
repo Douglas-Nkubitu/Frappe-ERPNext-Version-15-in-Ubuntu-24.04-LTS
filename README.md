@@ -165,8 +165,14 @@ Now press (Ctrl-X) to exit
     bench new-site {site-name}
     
     bench --site {site-name} add-to-hosts
-
+    
     bench use {site-name}
+
+If you are using multiple instance in the same server
+
+    bench set-nginx-port {site-name} {port-number}
+
+   
 
 
 ### STEP 15 install ERPNext latest version in bench & site
