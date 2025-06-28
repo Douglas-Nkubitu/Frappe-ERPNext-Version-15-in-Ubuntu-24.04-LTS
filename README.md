@@ -177,5 +177,54 @@ Now press (Ctrl-X) to exit
     bench --site {site-name} install-app erpnext
     
     bench start
+### Setting ERPNext for Production
 
-### STEP 16
+### STEP 16 Enable Scheduler
+      bench --site [site-name] enable-scheduler
+
+### STEP 17 Disable maintenance mode
+      bench --site [site-name] set-maintenance-mode off
+      
+### STEP 18 Setup production config
+      sudo bench setup production [frappe-user]
+
+### STEP 19 Setup NGINX to apply the changes
+      bench setup nginx
+
+### STEP 20 Restart Supervisor and Launch Production Mode
+      sudo supervisorctl restart all sudo bench setup production [frappe-user]
+
+### Setting Site SSL
+
+### STEP 21 Set SSL for Site
+      ***********Execute the following to add your URL to your ERPNext Server installation:
+      export LC_ALL=C.UTF-8
+      cd frappe-bench
+      bench config dns_multitenant on
+      bench setup add-domain --site {site-name} {site-URL}
+      bench setup nginx (answer Y to the question about replacing the config file)
+      sudo service nginx restart
+      cd ~
+      
+      Now it is time to work on the SSL certificate for your server. First we need to make sure that certbot is not already installed:
+      sudo apt-get remove certbot
+      
+      Now we are going to install the package bundle provider and make sure it is all up to date with the latest release of ‘snapd’ and let it handle the certbot for us (much simpler this way):
+      sudo apt install snapd
+      sudo snap install core
+      sudo snap refresh core
+      
+      Now we use the ‘snap’ service to automatically install and configure certbot to work properly with your new ERPNext server:
+      sudo snap install --classic certbot
+      sudo ln -s /snap/bin/certbot /usr/bin/certbot
+      
+      Now we can safely use the pre-configured certbot to install your SSL certificate:
+      sudo certbot --nginx
+      (The system will pause at some point and ask you to select the site name you wish to install the certificate from a list of names it found. Be sure to select the URL you used and not ‘site1.local’ at this point)
+      
+
+
+      
+
+      
+
