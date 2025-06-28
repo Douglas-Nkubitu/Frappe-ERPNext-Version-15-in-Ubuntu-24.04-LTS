@@ -174,6 +174,8 @@ Now press (Ctrl-X) to exit
     ###OR
     bench get-app https://github.com/frappe/erpnext --branch version-15
 
-    bench --site dcode.com install-app erpnext
+    bench --site {site-name} install-app erpnext
     
     bench start
+
+### STEP 16
