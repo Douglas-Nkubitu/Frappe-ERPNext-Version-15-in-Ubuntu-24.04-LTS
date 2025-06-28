@@ -199,6 +199,13 @@ If you are using multiple instance in the same server
 ### STEP 18 Setup production config
       sudo bench setup production [frappe-user]
 
+In case you get an error "sudo /usr/bin/python3 -m pip install ansible
+error: externally-managed-environment " from above
+
+      sudo /usr/bin/python3 -m pip install ansible --break-system-packages
+
+      sudo bench setup production [frappe-user]
+
 ### STEP 19 Setup NGINX to apply the changes
       bench setup nginx
 
