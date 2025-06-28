@@ -174,7 +174,7 @@ Now press (Ctrl-X) to exit
     
     bench get-app erpnext --branch version-15
 
-   Inncase you have custome app
+   In case you have custome app
 
     bench get-app {custom-app (Clone using the web URL.)}
 
